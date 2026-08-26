@@ -1,0 +1,172 @@
+<!-- @dsCard group="Components" name="Closing band" subtitle="The navy band that ends every piece" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Closing band — Lev Family Health</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Spectral:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Lev Family Health — Design Tokens
+
+   Colour and logo values are read from the master vector file (Lev logos.ai,
+   Illustrator 30.6, 1 Jul 2026) — that file is the authority.
+   Type, scale, spacing and layout are measured off the Ready Ads library.
+   Values marked "ad-derived" appear in produced work but not in the master file.
+   ========================================================================== */
+
+
+
+:root {
+  /* ---- Core palette — from the master vector file --------------------- */
+  --lev-navy:        #091F3E;  /* primary dark ground: closing band, alerts  */
+  --lev-royal:       #2A50A3;  /* logo chevron, display headlines, chips     */
+  --lev-sky:         #55B7E7;  /* logo arcs, shape accents, secondary chips  */
+  --lev-cream:       #F9F6DF;  /* PRIMARY light ground — never plain white   */
+  --lev-black:       #000000;  /* the wordmark. Not navy.                    */
+  --lev-white:       #FFFFFF;  /* cards floating on cream only               */
+
+  /* ---- Ad-derived tints ----------------------------------------------- */
+  --lev-royal-alt:   #37519E;  /* card fill on navy, where royal goes flat   */
+  --lev-butter:      #FEF0C9;  /* pediatric / camp seasonal ground           */
+
+  /* ---- Sub-brand: Women's Health — from the master vector file --------- */
+  --lev-wh-pink:      #EE4385; /* chevron, figure head and heart             */
+  --lev-wh-pink-lt:   #F38CB4; /* light chevron variant, reversed figure     */
+  --lev-wh-magenta:   #C2336A; /* arcs, "Women's Health" descender           */
+  --lev-wh-magenta-d: #BD386D; /* reversed ground                            */
+  --lev-wh-plum:      #802148; /* deep wordmark variant                      */
+  --lev-wh-blush:     #F7CADD; /* ad-derived: Women's Health page ground     */
+  --lev-wh-ink:       #1A0A12; /* ad-derived: display type on blush          */
+
+  /* ---- Text ------------------------------------------------------------ */
+  --lev-ink:         #091F3E;  /* body on light grounds                      */
+  --lev-ink-muted:   #46587A;  /* secondary body on light                    */
+  --lev-on-dark:     #F9F6DF;  /* body on navy                               */
+  --lev-on-dark-mut: #9FB4D4;  /* secondary body on navy                     */
+
+  /* ---- Type families --------------------------------------------------- */
+  /* Licensed to JAM. Fallbacks are preview-only. */
+  --lev-display: 'Martina Plantijn', 'Spectral', Georgia, 'Times New Roman', serif;
+  --lev-sans:    'Graphik', 'Graphik Web', 'Figtree', 'Inter', system-ui, sans-serif;
+
+  /* ---- Type scale (print ad at 8.5x11in / web equivalent) -------------- */
+  --lev-t-display-xl: clamp(3.5rem, 9vw, 7rem);   /* Martina Light, lh .95  */
+  --lev-t-display-l:  clamp(2.75rem, 6vw, 4.5rem);
+  --lev-t-display-m:  clamp(2rem, 4vw, 2.75rem);
+  --lev-t-alert:      clamp(3rem, 8vw, 6rem);     /* Graphik Semibold CAPS  */
+  --lev-t-heading:    1.5rem;                     /* Graphik Semibold       */
+  --lev-t-eyebrow:    0.8125rem;                  /* Graphik Semibold, .12em */
+  --lev-t-body-l:     1.125rem;
+  --lev-t-body:       1rem;
+  --lev-t-body-s:     0.875rem;
+  --lev-t-caption:    0.75rem;
+
+  --lev-lh-display:   0.95;
+  --lev-lh-body:      1.45;
+  --lev-ls-eyebrow:   0.12em;
+  --lev-ls-display:   -0.01em;
+
+  /* ---- Spacing (8pt base) ---------------------------------------------- */
+  --lev-s1: 4px;   --lev-s2: 8px;   --lev-s3: 12px;  --lev-s4: 16px;
+  --lev-s5: 24px;  --lev-s6: 32px;  --lev-s7: 48px;  --lev-s8: 64px;
+  --lev-s9: 96px;
+
+  /* ---- Radii ----------------------------------------------------------- */
+  --lev-r-chip:  6px;    /* service chips — square-ish, not pill            */
+  --lev-r-pill:  999px;  /* Women's Health service list only                */
+  --lev-r-card:  10px;
+  --lev-r-photo: 4px;
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --lev-margin:  8%;     /* page margin on print ads                        */
+  --lev-band:    13%;    /* navy footer band height as % of page            */
+  --lev-measure: 62ch;   /* max body measure                                */
+
+  /* ---- Logo ------------------------------------------------------------ */
+  --lev-logo-clearspace: 1;    /* multiplier on chevron height, all sides   */
+  --lev-logo-min-print:  1.25in;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--lev-sans);
+  background:var(--lev-cream);
+  color:var(--lev-ink);
+  -webkit-font-smoothing:antialiased;
+  padding:var(--lev-s7);
+}
+.ds-h{
+  font:600 var(--lev-t-eyebrow)/1 var(--lev-sans);
+  letter-spacing:var(--lev-ls-eyebrow);
+  text-transform:uppercase;
+  color:var(--lev-royal);
+  margin:0 0 var(--lev-s2);
+}
+.ds-note{
+  font-size:var(--lev-t-body-s);
+  line-height:var(--lev-lh-body);
+  color:var(--lev-ink-muted);
+  max-width:var(--lev-measure);
+  margin:0 0 var(--lev-s6);
+}
+.ds-sec{margin:0 0 var(--lev-s8)}
+.ds-sec:last-child{margin-bottom:0}
+.ds-lbl{
+  font:500 var(--lev-t-caption)/1.4 var(--lev-sans);
+  color:var(--lev-ink-muted);
+  letter-spacing:.02em;
+}
+.ds-mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--lev-t-caption)}
+.ds-rule{border:0;border-top:1px solid rgba(9,31,62,.14);margin:var(--lev-s6) 0}
+.ds-do,.ds-dont{
+  font-size:var(--lev-t-body-s);line-height:var(--lev-lh-body);
+  padding:var(--lev-s3) var(--lev-s4);border-radius:var(--lev-r-card);
+}
+.ds-do{background:rgba(43,81,164,.08);border-left:3px solid var(--lev-royal)}
+.ds-dont{background:rgba(196,51,108,.08);border-left:3px solid var(--lev-wh-magenta)}
+.ds-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--lev-s4)}
+
+.chip{display:inline-flex;align-items:center;font:500 var(--lev-t-body-s)/1 var(--lev-sans);
+  padding:11px 18px;border-radius:var(--lev-r-chip);background:var(--lev-royal);color:var(--lev-cream)}
+
+</style>
+</head>
+<body>
+<section class="ds-sec">
+  <p class="ds-h">Components — Closing band</p>
+  <p class="ds-note">The single most recognisable element in the system. Full-bleed navy, roughly 13% of page height, reversed lockup on the left, locations on the right. Service chips straddle the top edge.</p>
+</section>
+
+<section class="ds-sec">
+  <div style="border-radius:var(--lev-r-card);overflow:hidden;border:1px solid rgba(9,31,62,.12)">
+    <div style="background:var(--lev-cream);padding:var(--lev-s7) var(--lev-s6) 0;display:flex;gap:var(--lev-s3);flex-wrap:wrap;position:relative;z-index:2;margin-bottom:-22px">
+      <span class="chip">Pediatrics</span><span class="chip">Adult Primary</span><span class="chip">Family Care</span><span class="chip">Women's Health</span>
+    </div>
+    <div style="background:var(--lev-navy);padding:var(--lev-s7) var(--lev-s6) var(--lev-s6);display:flex;align-items:flex-end;justify-content:space-between;gap:var(--lev-s6);flex-wrap:wrap">
+      <img src="../assets/lev-family-health-navy.svg" alt="Lev Health" style="width:190px;height:auto">
+      <div style="display:flex;gap:var(--lev-s7);flex-wrap:wrap">
+        <div>
+          <p style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-sky);margin:0 0 var(--lev-s1)">Pomona</p>
+          <p style="font:400 var(--lev-t-caption)/1.6 var(--lev-sans);color:var(--lev-on-dark);margin:0">Evergreen Uptown Mall<br>1581 US-202, Pomona NY<br>845.579.5700</p>
+        </div>
+        <div>
+          <p style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-sky);margin:0 0 var(--lev-s1)">Monsey</p>
+          <p style="font:400 var(--lev-t-caption)/1.6 var(--lev-sans);color:var(--lev-on-dark);margin:0">Town Square Mall<br>77 Route 59, Monsey NY<br>845.356.2273</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-sec">
+  <div class="ds-grid2">
+    <div class="ds-do"><strong>Do</strong> — end every full-page piece with this band, including Women's Health work.</div>
+    <div class="ds-dont"><strong>Don't</strong> — recolour the band, shrink it below 10% of page height, or run it without the lockup.</div>
+  </div>
+</section>
+</body>
+</html>

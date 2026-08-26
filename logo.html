@@ -1,0 +1,304 @@
+<!-- @dsCard group="Foundations" name="Logo" subtitle="Nine lockups, four marks, clear space and naming rules" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Logo — Lev Family Health</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=Spectral:wght@200;300;400&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   Lev Family Health — Design Tokens
+
+   Colour and logo values are read from the master vector file (Lev logos.ai,
+   Illustrator 30.6, 1 Jul 2026) — that file is the authority.
+   Type, scale, spacing and layout are measured off the Ready Ads library.
+   Values marked "ad-derived" appear in produced work but not in the master file.
+   ========================================================================== */
+
+
+
+:root {
+  /* ---- Core palette — from the master vector file --------------------- */
+  --lev-navy:        #091F3E;  /* primary dark ground: closing band, alerts  */
+  --lev-royal:       #2A50A3;  /* logo chevron, display headlines, chips     */
+  --lev-sky:         #55B7E7;  /* logo arcs, shape accents, secondary chips  */
+  --lev-cream:       #F9F6DF;  /* PRIMARY light ground — never plain white   */
+  --lev-black:       #000000;  /* the wordmark. Not navy.                    */
+  --lev-white:       #FFFFFF;  /* cards floating on cream only               */
+
+  /* ---- Ad-derived tints ----------------------------------------------- */
+  --lev-royal-alt:   #37519E;  /* card fill on navy, where royal goes flat   */
+  --lev-butter:      #FEF0C9;  /* pediatric / camp seasonal ground           */
+
+  /* ---- Sub-brand: Women's Health — from the master vector file --------- */
+  --lev-wh-pink:      #EE4385; /* chevron, figure head and heart             */
+  --lev-wh-pink-lt:   #F38CB4; /* light chevron variant, reversed figure     */
+  --lev-wh-magenta:   #C2336A; /* arcs, "Women's Health" descender           */
+  --lev-wh-magenta-d: #BD386D; /* reversed ground                            */
+  --lev-wh-plum:      #802148; /* deep wordmark variant                      */
+  --lev-wh-blush:     #F7CADD; /* ad-derived: Women's Health page ground     */
+  --lev-wh-ink:       #1A0A12; /* ad-derived: display type on blush          */
+
+  /* ---- Text ------------------------------------------------------------ */
+  --lev-ink:         #091F3E;  /* body on light grounds                      */
+  --lev-ink-muted:   #46587A;  /* secondary body on light                    */
+  --lev-on-dark:     #F9F6DF;  /* body on navy                               */
+  --lev-on-dark-mut: #9FB4D4;  /* secondary body on navy                     */
+
+  /* ---- Type families --------------------------------------------------- */
+  /* Licensed to JAM. Fallbacks are preview-only. */
+  --lev-display: 'Martina Plantijn', 'Spectral', Georgia, 'Times New Roman', serif;
+  --lev-sans:    'Graphik', 'Graphik Web', 'Figtree', 'Inter', system-ui, sans-serif;
+
+  /* ---- Type scale (print ad at 8.5x11in / web equivalent) -------------- */
+  --lev-t-display-xl: clamp(3.5rem, 9vw, 7rem);   /* Martina Light, lh .95  */
+  --lev-t-display-l:  clamp(2.75rem, 6vw, 4.5rem);
+  --lev-t-display-m:  clamp(2rem, 4vw, 2.75rem);
+  --lev-t-alert:      clamp(3rem, 8vw, 6rem);     /* Graphik Semibold CAPS  */
+  --lev-t-heading:    1.5rem;                     /* Graphik Semibold       */
+  --lev-t-eyebrow:    0.8125rem;                  /* Graphik Semibold, .12em */
+  --lev-t-body-l:     1.125rem;
+  --lev-t-body:       1rem;
+  --lev-t-body-s:     0.875rem;
+  --lev-t-caption:    0.75rem;
+
+  --lev-lh-display:   0.95;
+  --lev-lh-body:      1.45;
+  --lev-ls-eyebrow:   0.12em;
+  --lev-ls-display:   -0.01em;
+
+  /* ---- Spacing (8pt base) ---------------------------------------------- */
+  --lev-s1: 4px;   --lev-s2: 8px;   --lev-s3: 12px;  --lev-s4: 16px;
+  --lev-s5: 24px;  --lev-s6: 32px;  --lev-s7: 48px;  --lev-s8: 64px;
+  --lev-s9: 96px;
+
+  /* ---- Radii ----------------------------------------------------------- */
+  --lev-r-chip:  6px;    /* service chips — square-ish, not pill            */
+  --lev-r-pill:  999px;  /* Women's Health service list only                */
+  --lev-r-card:  10px;
+  --lev-r-photo: 4px;
+
+  /* ---- Layout ---------------------------------------------------------- */
+  --lev-margin:  8%;     /* page margin on print ads                        */
+  --lev-band:    13%;    /* navy footer band height as % of page            */
+  --lev-measure: 62ch;   /* max body measure                                */
+
+  /* ---- Logo ------------------------------------------------------------ */
+  --lev-logo-clearspace: 1;    /* multiplier on chevron height, all sides   */
+  --lev-logo-min-print:  1.25in;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family:var(--lev-sans);
+  background:var(--lev-cream);
+  color:var(--lev-ink);
+  -webkit-font-smoothing:antialiased;
+  padding:var(--lev-s7);
+}
+.ds-h{
+  font:600 var(--lev-t-eyebrow)/1 var(--lev-sans);
+  letter-spacing:var(--lev-ls-eyebrow);
+  text-transform:uppercase;
+  color:var(--lev-royal);
+  margin:0 0 var(--lev-s2);
+}
+.ds-note{
+  font-size:var(--lev-t-body-s);
+  line-height:var(--lev-lh-body);
+  color:var(--lev-ink-muted);
+  max-width:var(--lev-measure);
+  margin:0 0 var(--lev-s6);
+}
+.ds-sec{margin:0 0 var(--lev-s8)}
+.ds-sec:last-child{margin-bottom:0}
+.ds-lbl{
+  font:500 var(--lev-t-caption)/1.4 var(--lev-sans);
+  color:var(--lev-ink-muted);
+  letter-spacing:.02em;
+}
+.ds-mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:var(--lev-t-caption)}
+.ds-rule{border:0;border-top:1px solid rgba(9,31,62,.14);margin:var(--lev-s6) 0}
+.ds-do,.ds-dont{
+  font-size:var(--lev-t-body-s);line-height:var(--lev-lh-body);
+  padding:var(--lev-s3) var(--lev-s4);border-radius:var(--lev-r-card);
+}
+.ds-do{background:rgba(43,81,164,.08);border-left:3px solid var(--lev-royal)}
+.ds-dont{background:rgba(196,51,108,.08);border-left:3px solid var(--lev-wh-magenta)}
+.ds-grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--lev-s4)}
+
+</style>
+</head>
+<body>
+<section class="ds-sec">
+  <p class="ds-h">Foundations — Logo</p>
+  <p class="ds-note">One name: <strong>Lev Family Health</strong>. Locations are modifiers, never separate brands — "Lev Family Health — Monsey", "Lev Family Health — Pomona". Nine lockups exist and they cover every case; if a situation seems to need a tenth, it needs one of these nine at a different size. All files here are vector, extracted from the master <span class="ds-mono">Lev logos.ai</span>.</p>
+</section>
+
+<section class="ds-sec">
+  <p class="ds-h">Lev Family Health</p>
+  <div class="ds-grid2"><figure style="margin:0">
+  <div style="background:#FFFFFF;border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-family-health-primary.svg" alt="Primary" style="width:min(300px,88%);height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Primary</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-family-health-primary.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">Royal chevron, sky arcs, black wordmark. The default everywhere the ground is white or cream.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#FFFFFF;border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-family-health-black.svg" alt="Mono black" style="width:min(300px,88%);height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Mono black</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-family-health-black.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">One-colour reproduction: fax, stamps, single-colour print, engraving.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#000000;border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-family-health-white.svg" alt="Mono white" style="width:min(300px,88%);height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Mono white</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-family-health-white.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">One-colour reversed. Use on photography and any dark ground that is not brand navy.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#091F3E;border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-family-health-navy.svg" alt="On navy" style="width:min(300px,88%);height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">On navy</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-family-health-navy.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">Cream chevron, sky arcs, cream wordmark. This is the lockup inside the closing band.</span>
+  </figcaption>
+</figure></div>
+</section>
+
+<section class="ds-sec">
+  <p class="ds-h">Lev Women's Health</p>
+  <p class="ds-note">The sub-brand keeps the wordmark and swaps the mark colourway. It also has an alternate figure mark — head, shoulders, heart — that no other service line may use.</p>
+  <div class="ds-grid2"><figure style="margin:0">
+  <div style="background:#FFFFFF;border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-womens-health-primary.svg" alt="Primary" style="width:min(300px,88%);height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Primary</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-womens-health-primary.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">Pink chevron, magenta arcs, black wordmark, magenta descender.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#FFFFFF;border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-womens-health-light.svg" alt="Light chevron" style="width:min(300px,88%);height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Light chevron</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-womens-health-light.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">Light-pink chevron. Use when the primary reads too hot against a warm ground.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#FFFFFF;border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-womens-health-deep.svg" alt="Deep wordmark" style="width:min(300px,88%);height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Deep wordmark</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-womens-health-deep.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">Plum wordmark. Print pieces where black goes heavy against blush.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#FFFFFF;border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-womens-health-figure.svg" alt="Figure mark" style="width:min(300px,88%);height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Figure mark</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-womens-health-figure.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">Alternate mark: head, shoulders, heart. Reserved for Women's Health.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#BD386D;border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-womens-health-figure-light.svg" alt="Figure reversed" style="width:min(300px,88%);height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Figure reversed</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-womens-health-figure-light.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">The figure mark on the deep magenta ground.</span>
+  </figcaption>
+</figure></div>
+</section>
+
+<section class="ds-sec">
+  <p class="ds-h">Marks alone</p>
+  <p class="ds-note">The mark carries the brand without the wordmark only where the name is already present or the space is too small to set it: avatars, favicons, seals, watermarks.</p>
+  <div class="ds-grid2"><figure style="margin:0">
+  <div style="background:#FFFFFF;border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-mark.svg" alt="Mark" style="width:88px;height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Mark</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-mark.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">Avatars, favicons, seals, stamps.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#091F3E;border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-mark-reversed.svg" alt="Mark reversed" style="width:88px;height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Mark reversed</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-mark-reversed.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">On navy.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#FFFFFF;border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-mark-womens.svg" alt="Women's mark" style="width:88px;height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Women's mark</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-mark-womens.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">Women's Health colourway.</span>
+  </figcaption>
+</figure><figure style="margin:0">
+  <div style="background:#FFFFFF;border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s6);display:flex;align-items:center;justify-content:center;min-height:150px">
+    <img src="../assets/lev-mark-womens-figure.svg" alt="Women's figure" style="width:88px;height:auto">
+  </div>
+  <figcaption style="margin-top:var(--lev-s3)">
+    <span style="font:600 var(--lev-t-body-s)/1.3 var(--lev-sans);color:var(--lev-ink)">Women's figure</span>
+    <span class="ds-mono" style="color:var(--lev-ink-muted);display:block;margin-top:2px">lev-mark-womens-figure.svg</span>
+    <span class="ds-lbl" style="display:block;margin-top:6px">The alternate figure, mark only.</span>
+  </figcaption>
+</figure></div>
+</section>
+
+<hr class="ds-rule">
+
+<section class="ds-sec">
+  <p class="ds-h">Clear space and minimum size</p>
+  <div class="ds-grid2">
+    <div style="background:var(--lev-cream);border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s7);display:flex;justify-content:center">
+      <div style="position:relative;padding:44px">
+        <div style="position:absolute;inset:0;border:1px dashed rgba(42,80,163,.45);border-radius:4px"></div>
+        <img src="../assets/lev-family-health-primary.svg" alt="clear space" style="width:190px;height:auto">
+      </div>
+    </div>
+    <div style="background:var(--lev-white);border:1px solid rgba(9,31,62,.14);border-radius:var(--lev-r-card);padding:var(--lev-s5);display:flex;align-items:center">
+      <div>
+        <p style="margin:0 0 var(--lev-s2);font:600 var(--lev-t-body)/1.3 var(--lev-sans)">Clear space equals the height of the chevron</p>
+        <p class="ds-lbl" style="margin:0 0 var(--lev-s4)">Measured on all four sides. Nothing — type, photo edge, shape accent — enters that zone.</p>
+        <p style="margin:0 0 var(--lev-s2);font:600 var(--lev-t-body)/1.3 var(--lev-sans)">Minimum width</p>
+        <p class="ds-lbl" style="margin:0">1.25&nbsp;in in print. 140&nbsp;px on screen. Below that, use the mark alone.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="ds-sec">
+  <div class="ds-grid2">
+    <div class="ds-do"><strong>Do</strong> — pick the lockup built for the ground you are on. There is one for white, black, navy and magenta.</div>
+    <div class="ds-dont"><strong>Don't</strong> — recolour a lockup by hand, rotate the mark, flatten it to one tone outside the mono files, or build a logo for a location.</div>
+  </div>
+</section>
+</body>
+</html>
